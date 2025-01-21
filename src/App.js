@@ -1,14 +1,15 @@
-// src/App.js 
+// src/App.js
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { registerUser, logoutUser } from './redux/userSlice';
 import { increment, decrement } from './redux/counterslice';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar"; // Importa la navbar
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Register from "./pages/Register";
+import TodoList from './components/TodoList'; // Importa il componente della To-Do List
 
 function App() {
   const count = useSelector((state) => state.counter.value);
@@ -65,6 +66,8 @@ function App() {
               <p>Nome: {user.name}</p>
               <p>Email: {user.email}</p>
               <button onClick={handleLogout}>Logout</button>
+              {/* Mostra la To-Do list solo se l'utente è registrato */}
+              <TodoList /> 
             </div>
           )}
         </div>

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   name: '',
   email: '',
-  todoList: [], // Nuova lista di attività
+  todoList: [], // Lista delle attività
 };
 
 const userSlice = createSlice({
@@ -17,13 +17,13 @@ const userSlice = createSlice({
     logoutUser: (state) => {
       state.name = '';
       state.email = '';
-      state.todoList = []; // Reset lista attività quando si effettua il logout
+      state.todoList = []; // Reset della lista quando si fa logout
     },
     addTask: (state, action) => {
-      state.todoList.push(action.payload); // Aggiungi una nuova attività
+      state.todoList.push(action.payload); // Aggiungi attività
     },
     removeTask: (state, action) => {
-      state.todoList = state.todoList.filter(task => task.id !== action.payload); // Rimuovi attività
+      state.todoList = state.todoList.filter((task) => task.id !== action.payload); // Rimuovi attività
     },
   },
 });

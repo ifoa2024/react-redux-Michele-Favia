@@ -1,11 +1,12 @@
 // src/components/Navbar.js
-import React from "react";
+import React from "react"; // Importazione unica di React
 import { Link } from "react-router-dom"; // Per la navigazione con react-router-dom
 
 function Navbar() {
   return (
     <nav style={styles.nav}>
       <ul style={styles.navList}>
+        {/* Collegamenti di navigazione */}
         <li style={styles.navItem}>
           <Link to="/" style={styles.link}>Home</Link>
         </li>
@@ -20,6 +21,7 @@ function Navbar() {
   );
 }
 
+// Stili per la navbar
 const styles = {
   nav: {
     background: "#333",
